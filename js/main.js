@@ -43,6 +43,6 @@ document.addEventListener("keydown", (event) => {
 // Disparar
 document.addEventListener("keydown", (event) => {
   if (event.code === "Space") {
-    gameObject.jugador.disparar();
+    gameObject.disparosJugadorAppear();
   }
 });
