@@ -161,7 +161,6 @@ class Game {
   musicaFondoOn = () => {
     musicaFondo.play();
   };
-
 }
 
 // BONUS
