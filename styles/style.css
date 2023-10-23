@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  background-image: url("../images/Fondo\ Star\ Wars.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#start-btn {
+  background-image: url("../images/START.png");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: 240px 45px;
+  background-position: center;
+  padding: 20px;
+  border-radius: 10px;
+  width: 290px;
+  height: 50px;
+  border: 3px solid white;
+}
+
+#restart-btn {
+  background-image: url("../images/RESTART.png");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: 316px 45px;
+  background-position: center;
+  padding: 20px;
+  border-radius: 10px;
+  width: 366px;
+  height: 50px;
+  border: 3px solid white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+#game-box {
+  background-image: url("../images/Fondo\ Star\ Wars.png");
+  background-position: center;
+  background-size: cover;
+  width: 500px;;
+  height: 750px;;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+  border: 5px solid white;
+  z-index: 1;
+  margin-top: -75px;
+}
+
+#game-screen, #gameover-screen {
+  display: none;
+}
+
+img {
+  margin-bottom: 200px;
+}
+
+#cuadro-de-mandos {
+z-index: 2;
+top: -60px;
+position: relative;
+width: 600px;
+border-radius: 25%;
+}

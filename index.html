@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+
+    <!-- START SCREEN -->
+    <div id="start-screen" class="container">
+      <img
+        src="./images/Star Wars la caida de Alderaan.png"
+        width="1000"
+        alt="Star Wars: la caida de Alderaan"
+      />
+      <button id="start-btn"></div></button>
+    </div>
+
+    <!-- SELECT SCREEN -->
+    <div id="select-screen" class="container">
+      <div id="select-box">
+        <!-- Select elements are added here -->
+      </div>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div id="game-screen" class="container">
+      <div id="game-box">
+        <!-- Game elements are added here -->
+      </div>
+      <img id="cuadro-de-mandos" src="./images/cuadro-de-mandos.png" alt="cuadro de mando">
+    </div>
+
+    <!-- TRANSITION SCREEN -->
+    <div id="transition-screen" class="container">
+      <div id="transition-box">
+        <!-- Transition elements are added here -->
+      </div>
+    </div>
+
+    <!-- GAME OVER SCREEN -->
+    <div id="gameover-screen" class="container">
+      <img
+        src="./images/Star Wars la caida de Alderaan.png"
+        width="1000"
+        alt="Star Wars: la caida de Alderaan"
+      />
+      <img src="./images/GAME OVER.png" alt="Game Over">
+      <button id="restart-btn"></div></button>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/jugador.js"></script>
+    <script src="./js/enemigos.js"></script>
+    
+  </body>
 </html>
