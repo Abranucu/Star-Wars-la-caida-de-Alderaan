@@ -50,7 +50,7 @@ class Jugador {
     }
   };
   // Recibir dmg
-  recieveJugadorDmg = ((dmg) => {
-    this.vidas -= dmg
-  })
+  recieveJugadorDmg = (dmg) => {
+    this.vidas -= dmg;
+  };
 }

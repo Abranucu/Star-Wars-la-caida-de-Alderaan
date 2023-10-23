@@ -43,7 +43,7 @@ class Enemigos {
       isEnemigosMovingRight = true;
     }
   };
-  
+
   // BONUS
   // Añadir mas enemigos
   // Añadir jefes

@@ -21,6 +21,7 @@ class Game {
 
   // GameLoop
   gameLoop = () => {
+    this.musicaFondoOn();
     this.enemigos.moveEnemigos();
     this.enemigos.enemigosColisionCheck();
     this.disparosEenemigosAppear();
@@ -62,6 +63,9 @@ class Game {
       this.jugadorEnemigosDestroy();
       this.jugador.vidas = 3;
       this.score = 0;
+      sonidoGameover.currentTime = 0;
+      sonidoGameover.play();
+      musicaFondo.pause()
     }
   };
 
@@ -78,6 +82,8 @@ class Game {
       this.jugador.y = 600;
       this.jugador.node.style.left = `${this.jugador.x}px`;
       this.jugador.node.style.top = `${this.jugador.y}px`;
+      sonidoExplosion.currentTime = 0;
+      sonidoExplosion.play();
     }
   };
   colisionCheckDisparosEnemigosJugador = () => {
@@ -89,6 +95,8 @@ class Game {
         eachDisparo.y + eachDisparo.h > this.jugador.y
       ) {
         this.jugador.recieveJugadorDmg(eachDisparo.dmg);
+        sonidoExplosion.currentTime = 0;
+        sonidoExplosion.play();
         let index = this.disparosEnemigosArr.indexOf(eachDisparo);
         if (index !== -1) {
           this.disparosEnemigosArr.splice(index, 1);
@@ -104,10 +112,12 @@ class Game {
         eachDisparo.y + eachDisparo.h > this.enemigos.y
       ) {
         let index = this.disparosJugadorArr.indexOf(eachDisparo);
+        sonidoExplosion.currentTime = 0;
+        sonidoExplosion.play();
         if (index !== -1) {
           this.disparosJugadorArr.splice(index, 1);
         }
-        this.score += eachDisparo.dmg
+        this.score += eachDisparo.dmg;
         eachDisparo.node.remove();
       }
     });
@@ -133,6 +143,8 @@ class Game {
       let xPosition = this.enemigos.x;
       let newDisparosEnemigos = new DisparosEnemigos(xPosition);
       this.disparosEnemigosArr.push(newDisparosEnemigos);
+      sonidosDisparosEnemigo.currentTime = 0;
+      sonidosDisparosEnemigo.play();
     }
   };
   disparosJugadorAppear = () => {
@@ -141,7 +153,11 @@ class Game {
     let newDisparosJugador = new DisparosJugador(xPosition, yPosition);
     this.disparosJugadorArr.push(newDisparosJugador);
   };
+
+  // Sonido
+  musicaFondoOn = () => {
+    musicaFondo.play();
+  };
 }
 
 // BONUS
-// Sonido
