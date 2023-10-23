@@ -26,7 +26,4 @@ class DisparosEnemigos {
     this.y += this.speed;
     this.node.style.top = `${this.y}px`;
   };
-  atackEnemigos = () => {
-    return this.dmg
-  }
 }

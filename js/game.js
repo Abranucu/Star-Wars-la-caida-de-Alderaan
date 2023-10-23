@@ -11,7 +11,10 @@ class Game {
     this.disparosJugadorArr = [];
     // Timer
     this.timer = 0;
+    // GameOn
     this.isGameOn = true;
+    // Score
+    this.score = 0;
   }
 
   // Metodos
@@ -27,13 +30,27 @@ class Game {
     this.disparosJugadorArr.forEach((eachDisparo) => {
       eachDisparo.disparosMovimientoAutoJugador();
     });
+    this.vidas();
+    this.actualizarScore();
     this.colisionCheckJugadorEnemigos();
     this.colisionCheckDisparosEnemigosJugador();
+    this.gameOver();
+
     // Recursion
     this.timer++;
     if (this.isGameOn === true) {
       requestAnimationFrame(this.gameLoop);
     }
+  };
+
+  // Vidas
+  vidas = () => {
+    vidasH1Node.innerText = `X ${this.jugador.vidas}`;
+  };
+
+  // Score
+  actualizarScore = () => {
+    scoreH1Node.innerText = `SCORE:\n${this.score}`;
   };
 
   // GameOver
@@ -44,6 +61,7 @@ class Game {
       gameOverScreenNode.style.display = "flex";
       this.jugadorEnemigosDestroy();
       this.jugador.vidas = 3;
+      this.score = 0;
     }
   };
 
@@ -70,7 +88,11 @@ class Game {
         eachDisparo.y < this.jugador.y + this.jugador.h &&
         eachDisparo.y + eachDisparo.h > this.jugador.y
       ) {
-        this.jugador.recieveJugadorDmg(eachDisparo.atackEnemigos());
+        this.jugador.recieveJugadorDmg(eachDisparo.dmg);
+        let index = this.disparosEnemigosArr.indexOf(eachDisparo);
+        if (index !== -1) {
+          this.disparosEnemigosArr.splice(index, 1);
+        }
         eachDisparo.node.remove();
       }
     });
@@ -81,6 +103,11 @@ class Game {
         eachDisparo.y < this.enemigos.y + this.enemigos.h &&
         eachDisparo.y + eachDisparo.h > this.enemigos.y
       ) {
+        let index = this.disparosJugadorArr.indexOf(eachDisparo);
+        if (index !== -1) {
+          this.disparosJugadorArr.splice(index, 1);
+        }
+        this.score += eachDisparo.dmg
         eachDisparo.node.remove();
       }
     });
@@ -109,14 +136,12 @@ class Game {
     }
   };
   disparosJugadorAppear = () => {
+    let yPosition = this.jugador.y;
     let xPosition = this.jugador.x;
-    let newDisparosJugador = new DisparosJugador(xPosition);
+    let newDisparosJugador = new DisparosJugador(xPosition, yPosition);
     this.disparosJugadorArr.push(newDisparosJugador);
   };
 }
 
 // BONUS
-
-// Score
-// Vidas
 // Sonido

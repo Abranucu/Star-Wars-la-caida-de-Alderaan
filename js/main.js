@@ -5,8 +5,11 @@ let startScreenNode = document.querySelector("#start-screen");
 let gameScreenNode = document.querySelector("#game-screen");
 let gameBoxNode = document.querySelector("#game-box");
 let gameOverScreenNode = document.querySelector("#gameover-screen");
+let vidasH1Node = document.querySelector("#text-vidas")
+let scoreH1Node = document.querySelector("#text-score")
 let isEnemigosMovingRight = true;
 
+let score;
 let gameObject;
 
 // * STATE MANAGEMENT FUNCTIONS
@@ -23,6 +26,7 @@ const restartGame = () => {
   gameOverScreenNode.style.display = "none";
   startScreenNode.style.display = "flex";
 };
+
 
 // * EVENT LISTENERS
 // Start game pulsando boton start

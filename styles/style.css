@@ -68,3 +68,37 @@ position: relative;
 width: 600px;
 border-radius: 25%;
 }
+#vidas {
+  display: inline-block;
+  vertical-align: middle;
+}
+#han-solo {
+  z-index: 3;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 25%;
+  top: 790px;
+  left: 475px;
+}
+#text-vidas {
+  color: white;
+  z-index: 2;
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  border-radius: 25%;
+  top: 775px;
+  left: 520px;
+}
+
+#text-score {
+  color: white;
+  z-index: 2;
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  border-radius: 25%;
+  top: 770px;
+  left: 850px;
+}
