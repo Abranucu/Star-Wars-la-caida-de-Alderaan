@@ -63,9 +63,12 @@ class Game {
       this.jugadorEnemigosDestroy();
       this.jugador.vidas = 3;
       this.score = 0;
-      sonidoGameover.currentTime = 0;
-      sonidoGameover.play();
-      musicaFondo.pause()
+      setTimeout(() => {
+        sonidoGameover.volume = 1;
+        sonidoGameover.currentTime = 0;
+        sonidoGameover.play();
+      }, 3000);
+      musicaFondo.pause();
     }
   };
 
@@ -158,6 +161,7 @@ class Game {
   musicaFondoOn = () => {
     musicaFondo.play();
   };
+
 }
 
 // BONUS
