@@ -21,6 +21,11 @@ class Jugador {
     this.node.style.top = `${this.y}px`;
     // Velocidad
     this.speed = 10;
+    // Movimiento
+    this.isMovingUp = false;
+    this.isMovingDown = false;
+    this.isMovingLeft = false;
+    this.isMovingRight = false;
   }
 
   // Metodos
@@ -49,6 +54,22 @@ class Jugador {
       this.node.style.left = `${this.x}px`;
     }
   };
+  actualizarPosicionJugador = () => {
+    if (this.isMovingUp) {
+      this.moveUp();
+    }
+    if (this.isMovingDown) {
+      this.moveDown();
+    }
+    if (this.isMovingLeft) {
+      this.moveLeft();
+    }
+    if (this.isMovingRight) {
+      this.moveRight();
+    }
+    
+    // Realizar otras acciones relacionadas con el jugador, como detección de colisiones
+  }
   // Recibir dmg
   recieveJugadorDmg = (dmg) => {
     this.vidas -= dmg;

@@ -25,6 +25,7 @@ class Game {
     this.enemigos.moveEnemigos();
     this.enemigos.enemigosColisionCheck();
     this.disparosEenemigosAppear();
+    this.jugador.actualizarPosicionJugador();
     this.disparosEnemigosArr.forEach((eachDisparo) => {
       eachDisparo.disparosMovimientoAutoEnemigos();
     });
@@ -32,6 +33,7 @@ class Game {
       eachDisparo.disparosMovimientoAutoJugador();
     });
     this.vidas();
+    this.scoreGameOVer();
     this.actualizarScore();
     this.colisionCheckJugadorEnemigos();
     this.colisionCheckDisparosEnemigosJugador();
@@ -54,6 +56,11 @@ class Game {
     scoreH1Node.innerText = `SCORE:\n${this.score}`;
   };
 
+  // Score gameover screen
+  scoreGameOVer = () => {
+    h1GameoverScore.innerText = `${this.score}`;
+  };
+
   // GameOver
   gameOver = () => {
     if (this.jugador.vidas <= 0) {
@@ -62,12 +69,10 @@ class Game {
       gameOverScreenNode.style.display = "flex";
       this.jugadorEnemigosDestroy();
       this.jugador.vidas = 3;
-      this.score = 0;
       setTimeout(() => {
         sonidoGameover.volume = 1;
-        sonidoGameover.currentTime = 0;
         sonidoGameover.play();
-      }, 3000);
+      }, 1000);
       musicaFondo.pause();
     }
   };
@@ -85,8 +90,12 @@ class Game {
       this.jugador.y = 600;
       this.jugador.node.style.left = `${this.jugador.x}px`;
       this.jugador.node.style.top = `${this.jugador.y}px`;
-      sonidoExplosion.currentTime = 0;
-      sonidoExplosion.play();
+      sonidoExplosionEnemigo.volume = 0.3;
+      sonidoExplosionEnemigo.currentTime = 0;
+      sonidoExplosionEnemigo.play();
+      sonidoExplosionJugador.volume = 0.3;
+      sonidoExplosionJugador.currentTime = 0;
+      sonidoExplosionJugador.play();
     }
   };
   colisionCheckDisparosEnemigosJugador = () => {
@@ -98,8 +107,9 @@ class Game {
         eachDisparo.y + eachDisparo.h > this.jugador.y
       ) {
         this.jugador.recieveJugadorDmg(eachDisparo.dmg);
-        sonidoExplosion.currentTime = 0;
-        sonidoExplosion.play();
+        sonidoExplosionJugador.volume = 1;
+        sonidoExplosionJugador.currentTime = 0;
+        sonidoExplosionJugador.play();
         let index = this.disparosEnemigosArr.indexOf(eachDisparo);
         if (index !== -1) {
           this.disparosEnemigosArr.splice(index, 1);
@@ -115,8 +125,9 @@ class Game {
         eachDisparo.y + eachDisparo.h > this.enemigos.y
       ) {
         let index = this.disparosJugadorArr.indexOf(eachDisparo);
-        sonidoExplosion.currentTime = 0;
-        sonidoExplosion.play();
+        sonidoExplosionEnemigo.volume = 0.3;
+        sonidoExplosionEnemigo.currentTime = 0;
+        sonidoExplosionEnemigo.play();
         if (index !== -1) {
           this.disparosJugadorArr.splice(index, 1);
         }
@@ -146,6 +157,7 @@ class Game {
       let xPosition = this.enemigos.x;
       let newDisparosEnemigos = new DisparosEnemigos(xPosition);
       this.disparosEnemigosArr.push(newDisparosEnemigos);
+      sonidosDisparosEnemigo.volume = 0.2;
       sonidosDisparosEnemigo.currentTime = 0;
       sonidosDisparosEnemigo.play();
     }
@@ -159,6 +171,7 @@ class Game {
 
   // Sonido
   musicaFondoOn = () => {
+    musicaFondo.volume = 0.4;
     musicaFondo.play();
   };
 }

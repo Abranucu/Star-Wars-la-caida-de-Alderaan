@@ -8,13 +8,20 @@ let gameOverScreenNode = document.querySelector("#gameover-screen");
 let vidasH1Node = document.querySelector("#text-vidas");
 let scoreH1Node = document.querySelector("#text-score");
 let isEnemigosMovingRight = true;
-
 let sonidoDisparosJugador = new Audio("./sonidos/disparo-laser.mp3");
 let sonidosDisparosEnemigo = new Audio("./sonidos/bomba-laser.mp3");
-let sonidoGameover = new Audio("./sonidos/game-over.mp3");
-let sonidoExplosion = new Audio("./sonidos/explosion.mp3");
+let sonidoGameover = new Audio("./sonidos/darth-vader-no.mp3");
+let sonidoExplosionEnemigo = new Audio("./sonidos/explosion-enemigo.mp3");
+let sonidoExplosionJugador = new Audio("./sonidos/explosion-jugador.mp3");
 let musicaFondo = document.getElementById("musica-fondo");
-let score;
+let btnMusicaFondo = document.getElementById("btn-musica-fondo");
+let btnEfectosSonido = document.getElementById("btn-efectos");
+let h1GameoverScore = document.getElementById("score-gameover");
+
+let canShoot = true;
+let lastShootTime = 0;
+const shootCooldown = 200;
+
 let gameObject;
 
 // * STATE MANAGEMENT FUNCTIONS
@@ -30,6 +37,7 @@ const startGame = () => {
 const restartGame = () => {
   gameOverScreenNode.style.display = "none";
   startScreenNode.style.display = "flex";
+  gameObject.score = 0;
 };
 
 // * EVENT LISTENERS
@@ -40,21 +48,82 @@ restartBtnNode.addEventListener("click", restartGame);
 // Movimiento jugador
 document.addEventListener("keydown", (event) => {
   if (event.code === "KeyS") {
-    gameObject.jugador.moveDown();
+    gameObject.jugador.isMovingDown = true;
   } else if (event.code === "KeyW") {
-    gameObject.jugador.moveUp();
+    gameObject.jugador.isMovingUp = true;
   } else if (event.code === "KeyA") {
-    gameObject.jugador.moveLeft();
+    gameObject.jugador.isMovingLeft = true;
   } else if (event.code === "KeyD") {
-    gameObject.jugador.moveRight();
+    gameObject.jugador.isMovingRight = true;
+  }
+});
+
+document.addEventListener("keyup", (event) => {
+  if (event.code === "KeyS") {
+    gameObject.jugador.isMovingDown = false;
+  } else if (event.code === "KeyW") {
+    gameObject.jugador.isMovingUp = false;
+  } else if (event.code === "KeyA") {
+    gameObject.jugador.isMovingLeft = false;
+  } else if (event.code === "KeyD") {
+    gameObject.jugador.isMovingRight = false;
   }
 });
 
 // Disparar
 document.addEventListener("keydown", (event) => {
+  if (event.code === "Space" && canShoot) {
+    const currentTime = Date.now();
+    if (currentTime - lastShootTime >= shootCooldown) {
+      gameObject.disparosJugadorAppear();
+      sonidoDisparosJugador.volume = 0.3;
+      sonidoDisparosJugador.currentTime = 0;
+      sonidoDisparosJugador.play();
+      lastShootTime = currentTime; // Actualiza el tiempo del último disparo
+    }
+  }
+});
+document.addEventListener("keyup", (event) => {
   if (event.code === "Space") {
-    gameObject.disparosJugadorAppear();
-    sonidoDisparosJugador.currentTime = 0;
-    sonidoDisparosJugador.play();
+    canShoot = true;
+  }
+});
+
+// Sonido
+btnMusicaFondo.addEventListener("click", function () {
+  if (musicaFondo.muted && btnMusicaFondo.classList.contains("activo")) {
+    musicaFondo.muted = false;
+    btnMusicaFondo.classList.remove("activo");
+    this.blur();
+  } else {
+    musicaFondo.muted = true;
+    btnMusicaFondo.classList.add("activo");
+    this.blur();
+  }
+});
+btnEfectosSonido.addEventListener("click", function () {
+  if (
+    sonidoDisparosJugador.muted &&
+    sonidosDisparosEnemigo.muted &&
+    sonidoGameover.muted &&
+    sonidoExplosionEnemigo.muted &&
+    sonidoExplosionJugador.muted &&
+    btnEfectosSonido.classList.contains("activo")
+  ) {
+    sonidoDisparosJugador.muted = false;
+    sonidosDisparosEnemigo.muted = false;
+    sonidoGameover.muted = false;
+    sonidoExplosionEnemigo.muted = false;
+    sonidoExplosionJugador.muted = false;
+    btnEfectosSonido.classList.remove("activo");
+    this.blur();
+  } else {
+    sonidoDisparosJugador.muted = true;
+    sonidosDisparosEnemigo.muted = true;
+    sonidoGameover.muted = true;
+    sonidoExplosionEnemigo.muted = true;
+    sonidoExplosionJugador.muted = true;
+    btnEfectosSonido.classList.add("activo");
+    this.blur();
   }
 });
