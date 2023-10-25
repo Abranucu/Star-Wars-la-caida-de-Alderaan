@@ -80,7 +80,6 @@ document.addEventListener("keydown", (event) => {
       sonidoDisparosJugador.currentTime = 0;
       sonidoDisparosJugador.play();
       lastShootTime = currentTime;
-      event.preventDefault();
     }
   }
 });
