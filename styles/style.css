@@ -1,8 +1,17 @@
+html {
+  display: contents;
+  align-items: center;
+  max-height: 800px;
+}
+
 body {
   margin: 0;
   background-image: url("../images/Fondo\ Star\ Wars.png");
   background-size: cover;
   background-position: center;
+}
+div {
+position: relative;
 }
 
 #start-btn {
@@ -13,7 +22,7 @@ body {
   background-position: center;
   padding: 20px;
   border-radius: 10px;
-  width: 290px;
+  width: 290px; a
   height: 50px;
   border: 3px solid white;
 }
@@ -62,7 +71,7 @@ img {
 }
 
 #logo-gameover {
-  margin-bottom: 300px;
+  margin-bottom: 88px;
 }
 
 #cuadro-de-mandos {
@@ -78,33 +87,33 @@ border-radius: 25%;
 }
 #han-solo {
   z-index: 3;
-  position: absolute;
+  position: relative;
   width: 40px;
   height: 40px;
   border-radius: 25%;
-  top: 790px;
-  left: 475px;
+  top: -320px;
+  left: -190px;
 }
 #text-vidas {
   color: white;
   z-index: 2;
-  position: absolute;
+  position: relative;
   width: 50px;
   height: 40px;
   border-radius: 25%;
-  top: 775px;
-  left: 520px;
+  top: -480px;
+  left: -140px;
 }
 
 #text-score {
   color: white;
   z-index: 2;
-  position: absolute;
+  position: relative;
   width: 50px;
   height: 40px;
   border-radius: 25%;
-  top: 765px;
-  left: 850px;
+  top: -625px;
+  left: 185px;
 }
 
 #btn-musica-fondo {
@@ -119,9 +128,9 @@ border-radius: 25%;
   height: 50px;
   border: 3px solid white;
   z-index: 3;
-  top: 750px;
-  left: 720px;
-  position: absolute;
+  top: -573px;
+  left: 60px;
+  position: relative;
 }
 #btn-musica-fondo.activo {
   background-image: url("../images/sonido-off.png");
@@ -135,9 +144,9 @@ border-radius: 25%;
   height: 50px;
   border: 3px solid white;
   z-index: 3;
-  top: 750px;
-  left: 720px;
-  position: absolute;
+  top: -573px;
+  left: 60px;
+  position: relative;
 }
 
 #btn-efectos {
@@ -152,9 +161,9 @@ border-radius: 25%;
   height: 50px;
   border: 3px solid white;
   z-index: 3;
-  top: 750px;
-  left: 660px;
-  position: absolute;
+  top: -573px;
+  left: -70px;
+  position: relative;
 }
 #btn-efectos.activo {
   background-image: url("../images/efectos-off.png");
@@ -168,29 +177,33 @@ border-radius: 25%;
   height: 50px;
   border: 3px solid white;
   z-index: 3;
-  top: 750px;
-  left: 660px;
-  position: absolute;
+  top: -573px;
+  left: -70px;
+  position: relative;
 }
 
 #score-gameover {
   color: white;
-  position: absolute;
-  top: 610px;
-  left: 900px;
+  position: relative;
+  top: -262px;
+  left: 389px;
   font-size: 100px;
 }
 
 #contenedor-score-gameover {
   display: inline-block;
   vertical-align: middle;
-  margin-bottom: 60px;
+  margin-bottom: 0;
 }
 
 #logo-score {
-  position: absolute;
+  position: relative;
   width: 360px;
   height: 70px;
-  top: 700px;
-  left: 350px;
+  top: 0;
+  left: -219px;
+}
+
+#wasd-space {
+  margin-bottom: 150px;
 }

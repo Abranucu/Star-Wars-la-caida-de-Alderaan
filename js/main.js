@@ -79,7 +79,8 @@ document.addEventListener("keydown", (event) => {
       sonidoDisparosJugador.volume = 0.3;
       sonidoDisparosJugador.currentTime = 0;
       sonidoDisparosJugador.play();
-      lastShootTime = currentTime; // Actualiza el tiempo del último disparo
+      lastShootTime = currentTime;
+      event.preventDefault();
     }
   }
 });
