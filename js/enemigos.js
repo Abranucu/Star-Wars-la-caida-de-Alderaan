@@ -39,9 +39,9 @@ class Enemigos {
   aceleracionEnemigos = () => {
     if (tiempoTranscurrido >= 60) {
       this.speed = 3;
-    } else if (tiempoTranscurrido >= 90) {
-      this.speed = 4;
     } else if (tiempoTranscurrido >= 120) {
+      this.speed = 4;
+    } else if (tiempoTranscurrido >= 180) {
       this.speed = 5;
     }
   };

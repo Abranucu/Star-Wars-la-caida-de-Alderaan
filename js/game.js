@@ -177,7 +177,7 @@ class Game {
       sonidosDisparosEnemigo.volume = 0.1;
       sonidosDisparosEnemigo.currentTime = 0;
       sonidosDisparosEnemigo.play();
-    } else if (this.timer % 60 === 0 && tiempoTranscurrido >= 120) {
+    } else if (this.timer % 60 === 0 && tiempoTranscurrido >= 180) {
       let xPosition = this.enemigos.x;
       let newDisparosEnemigos = new DisparosEnemigos(xPosition);
       this.disparosEnemigosArr.push(newDisparosEnemigos);
