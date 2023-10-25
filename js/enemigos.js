@@ -37,10 +37,12 @@ class Enemigos {
 
   // Aumento velocidad movimiento
   aceleracionEnemigos = () => {
-    if (this.speed < 6 && tiempoTranscurrido % 10 === 0) {
-      this.speed += 0.01;
+    if (this.speed <= 4) {
+      setInterval(() => {
+        this.speed += 1;
+      }, 30000);
     } else {
-      this.speed = 6;
+      this.speed = 4
     }
   };
 

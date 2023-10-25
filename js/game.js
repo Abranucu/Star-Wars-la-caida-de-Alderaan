@@ -70,6 +70,7 @@ class Game {
       gameOverScreenNode.style.display = "flex";
       this.jugadorEnemigosDestroy();
       this.jugador.vidas = 3;
+      tiempoTranscurrido = 0;
       setTimeout(() => {
         sonidoGameover.volume = 0.1;
         sonidoGameover.play();
