@@ -70,7 +70,7 @@ class Game {
       this.jugadorEnemigosDestroy();
       this.jugador.vidas = 3;
       setTimeout(() => {
-        sonidoGameover.volume = 1;
+        sonidoGameover.volume = 0.2;
         sonidoGameover.play();
       }, 1000);
       musicaFondo.pause();
