@@ -26,6 +26,7 @@ class Jugador {
     this.isMovingDown = false;
     this.isMovingLeft = false;
     this.isMovingRight = false;
+
   }
 
   // Metodos
@@ -67,9 +68,8 @@ class Jugador {
     if (this.isMovingRight) {
       this.moveRight();
     }
-    
-    // Realizar otras acciones relacionadas con el jugador, como detección de colisiones
   }
+  
   // Recibir dmg
   recieveJugadorDmg = (dmg) => {
     this.vidas -= dmg;

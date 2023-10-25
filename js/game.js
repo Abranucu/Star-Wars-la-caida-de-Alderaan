@@ -22,6 +22,7 @@ class Game {
   // GameLoop
   gameLoop = () => {
     this.musicaFondoOn();
+    this.enemigos.aceleracionEnemigos();
     this.enemigos.moveEnemigos();
     this.enemigos.enemigosColisionCheck();
     this.disparosEenemigosAppear();
@@ -70,7 +71,7 @@ class Game {
       this.jugadorEnemigosDestroy();
       this.jugador.vidas = 3;
       setTimeout(() => {
-        sonidoGameover.volume = 0.2;
+        sonidoGameover.volume = 0.1;
         sonidoGameover.play();
       }, 1000);
       musicaFondo.pause();
@@ -90,7 +91,7 @@ class Game {
       this.jugador.y = 600;
       this.jugador.node.style.left = `${this.jugador.x}px`;
       this.jugador.node.style.top = `${this.jugador.y}px`;
-      sonidoExplosionEnemigo.volume = 0.3;
+      sonidoExplosionEnemigo.volume = 0.1;
       sonidoExplosionEnemigo.currentTime = 0;
       sonidoExplosionEnemigo.play();
       sonidoExplosionJugador.volume = 0.3;
@@ -107,7 +108,7 @@ class Game {
         eachDisparo.y + eachDisparo.h > this.jugador.y
       ) {
         this.jugador.recieveJugadorDmg(eachDisparo.dmg);
-        sonidoExplosionJugador.volume = 1;
+        sonidoExplosionJugador.volume = 0.3;
         sonidoExplosionJugador.currentTime = 0;
         sonidoExplosionJugador.play();
         let index = this.disparosEnemigosArr.indexOf(eachDisparo);
@@ -125,13 +126,14 @@ class Game {
         eachDisparo.y + eachDisparo.h > this.enemigos.y
       ) {
         let index = this.disparosJugadorArr.indexOf(eachDisparo);
-        sonidoExplosionEnemigo.volume = 0.3;
+        sonidoExplosionEnemigo.volume = 0.1;
         sonidoExplosionEnemigo.currentTime = 0;
         sonidoExplosionEnemigo.play();
         if (index !== -1) {
           this.disparosJugadorArr.splice(index, 1);
         }
         this.score += eachDisparo.dmg;
+        this.reproducirExplosionGifNormal();
         eachDisparo.node.remove();
       }
     });
@@ -153,11 +155,18 @@ class Game {
 
   // Disparo enemigo
   disparosEenemigosAppear = () => {
-    if (this.timer % 120 === 0) {
+    if (this.timer % 120 === 0 && tiempoTranscurrido <= 60) {
       let xPosition = this.enemigos.x;
       let newDisparosEnemigos = new DisparosEnemigos(xPosition);
       this.disparosEnemigosArr.push(newDisparosEnemigos);
-      sonidosDisparosEnemigo.volume = 0.2;
+      sonidosDisparosEnemigo.volume = 0.1;
+      sonidosDisparosEnemigo.currentTime = 0;
+      sonidosDisparosEnemigo.play();
+    } else if (this.timer % 60 === 0 && tiempoTranscurrido > 60) {
+      let xPosition = this.enemigos.x;
+      let newDisparosEnemigos = new DisparosEnemigos(xPosition);
+      this.disparosEnemigosArr.push(newDisparosEnemigos);
+      sonidosDisparosEnemigo.volume = 0.1;
       sonidosDisparosEnemigo.currentTime = 0;
       sonidosDisparosEnemigo.play();
     }
@@ -171,9 +180,26 @@ class Game {
 
   // Sonido
   musicaFondoOn = () => {
-    musicaFondo.volume = 0.4;
+    musicaFondo.volume = 0.1;
     musicaFondo.play();
   };
-}
 
-// BONUS
+  // Gif
+  reproducirExplosionGifNormal = () => {
+
+    explosionGifNormal.style.display = "block";
+    explosionGifNormal.style.animation = "explosion-normal 1s";
+    explosionGifNormal.style.left = `${this.enemigos.x}px`;
+    explosionGifNormal.style.top = `${this.enemigos.y}px`;
+    setTimeout(function() {
+      explosionGifNormal.style.display = "none";
+    }, 200);
+  };
+
+  // Tiempo de juego
+  startTimer() {
+    setInterval(() => {
+      tiempoTranscurrido++;
+    }, 1000);
+  }
+}

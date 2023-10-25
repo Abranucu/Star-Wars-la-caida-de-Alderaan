@@ -35,6 +35,15 @@ class Enemigos {
     }
   };
 
+  // Aumento velocidad movimiento
+  aceleracionEnemigos = () => {
+    if (this.speed < 6 && tiempoTranscurrido % 10 === 0) {
+      this.speed += 0.01;
+    } else {
+      this.speed = 6;
+    }
+  };
+
   // Colision
   enemigosColisionCheck = () => {
     if (this.x + 80 > 500) {

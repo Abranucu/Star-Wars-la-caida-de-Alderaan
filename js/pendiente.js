@@ -1,6 +1,3 @@
-// MVP
-  // Instrucciones de como jugar
-  // Animacion explosion disparos
 // BONUS
   // SISTEMA DE NIVELES
     // Poner vida enemigo 1

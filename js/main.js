@@ -17,10 +17,12 @@ let musicaFondo = document.getElementById("musica-fondo");
 let btnMusicaFondo = document.getElementById("btn-musica-fondo");
 let btnEfectosSonido = document.getElementById("btn-efectos");
 let h1GameoverScore = document.getElementById("score-gameover");
+let explosionGifNormal = document.getElementById("explosion-normal");
 
 let canShoot = true;
 let lastShootTime = 0;
 const shootCooldown = 200;
+let tiempoTranscurrido = 0;
 
 let gameObject;
 
@@ -31,6 +33,7 @@ const startGame = () => {
   gameScreenNode.style.display = "flex";
   gameObject = new Game();
   gameObject.gameLoop();
+  gameObject.startTimer();
 };
 
 // Restart game
@@ -77,7 +80,7 @@ document.addEventListener("keydown", (event) => {
     const currentTime = Date.now();
     if (currentTime - lastShootTime >= shootCooldown) {
       gameObject.disparosJugadorAppear();
-      sonidoDisparosJugador.volume = 0.3;
+      sonidoDisparosJugador.volume = 0.1;
       sonidoDisparosJugador.currentTime = 0;
       sonidoDisparosJugador.play();
       lastShootTime = currentTime;
@@ -128,3 +131,5 @@ btnEfectosSonido.addEventListener("click", function () {
     this.blur();
   }
 });
+
+
