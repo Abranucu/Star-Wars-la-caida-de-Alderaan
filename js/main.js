@@ -73,6 +73,7 @@ document.addEventListener("keyup", (event) => {
 // Disparar
 document.addEventListener("keydown", (event) => {
   if (event.code === "Space" && canShoot) {
+    event.preventDefault();
     const currentTime = Date.now();
     if (currentTime - lastShootTime >= shootCooldown) {
       gameObject.disparosJugadorAppear();
