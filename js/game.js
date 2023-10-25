@@ -156,14 +156,28 @@ class Game {
 
   // Disparo enemigo
   disparosEenemigosAppear = () => {
-    if (this.timer % 120 === 0 && tiempoTranscurrido <= 60) {
+    if (this.timer % 150 === 0 && tiempoTranscurrido <= 60) {
       let xPosition = this.enemigos.x;
       let newDisparosEnemigos = new DisparosEnemigos(xPosition);
       this.disparosEnemigosArr.push(newDisparosEnemigos);
       sonidosDisparosEnemigo.volume = 0.1;
       sonidosDisparosEnemigo.currentTime = 0;
       sonidosDisparosEnemigo.play();
-    } else if (this.timer % 60 === 0 && tiempoTranscurrido > 60) {
+    } else if (this.timer % 120 === 0 && tiempoTranscurrido >= 60) {
+      let xPosition = this.enemigos.x;
+      let newDisparosEnemigos = new DisparosEnemigos(xPosition);
+      this.disparosEnemigosArr.push(newDisparosEnemigos);
+      sonidosDisparosEnemigo.volume = 0.1;
+      sonidosDisparosEnemigo.currentTime = 0;
+      sonidosDisparosEnemigo.play();
+    } else if (this.timer % 90 === 0 && tiempoTranscurrido >= 120) {
+      let xPosition = this.enemigos.x;
+      let newDisparosEnemigos = new DisparosEnemigos(xPosition);
+      this.disparosEnemigosArr.push(newDisparosEnemigos);
+      sonidosDisparosEnemigo.volume = 0.1;
+      sonidosDisparosEnemigo.currentTime = 0;
+      sonidosDisparosEnemigo.play();
+    } else if (this.timer % 60 === 0 && tiempoTranscurrido >= 120) {
       let xPosition = this.enemigos.x;
       let newDisparosEnemigos = new DisparosEnemigos(xPosition);
       this.disparosEnemigosArr.push(newDisparosEnemigos);
