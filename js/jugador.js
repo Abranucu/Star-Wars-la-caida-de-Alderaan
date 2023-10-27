@@ -9,8 +9,8 @@ class Jugador {
     // Dimensiones
     this.w = 80;
     this.h = 80;
-    this.x = 210;
-    this.y = 600;
+    this.x = 360;
+    this.y = 870;
     // Propiedades jugador
     this.vidas = 3;
     // Actualizar en el DOM
@@ -38,7 +38,7 @@ class Jugador {
     }
   };
   moveDown = () => {
-    if (this.y <= this.speed + 589) {
+    if (this.y <= this.speed + 850) {
       this.y += this.speed;
       this.node.style.top = `${this.y}px`;
     }
@@ -50,7 +50,7 @@ class Jugador {
     }
   };
   moveRight = () => {
-    if (this.x <= this.speed + 399) {
+    if (this.x <= this.speed + 699) {
       this.x += this.speed;
       this.node.style.left = `${this.x}px`;
     }
@@ -71,7 +71,7 @@ class Jugador {
   }
   
   // Recibir dmg
-  recieveJugadorDmg = (dmg) => {
+  jugadorRecieveDmg = (dmg) => {
     this.vidas -= dmg;
   };
 }

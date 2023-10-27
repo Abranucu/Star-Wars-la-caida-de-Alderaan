@@ -21,7 +21,7 @@
         alt="Star Wars: la caida de Alderaan"
       />
       <img src="./images/teclas-movimiento.png" alt="teclas-movimiento" id="wasd-space">
-      <button id="start-btn"></div></button>
+      <button id="start-btn"></button>
     </div>
 
     <!-- SELECT SCREEN -->
@@ -46,6 +46,7 @@
         <div id="sonido">
           <button id="btn-musica-fondo"></button>
           <button id="btn-efectos"></button>
+          <button id="btn-pause"></button>
         </div>
         <div id="score">
           <h1 id="text-score">SCORE:<br></h1>
@@ -56,7 +57,10 @@
     <!-- TRANSITION SCREEN -->
     <div id="transition-screen" class="container">
       <div id="transition-box">
-        <!-- Transition elements are added here -->
+        <img src="./images/boss-battle.png" alt="text transition to" id="transition-text">
+        <img src="./images/trade-federation-batlle-ship.png" alt="imagen boss" id="boss-image">
+        <video src="./videos/video-final.mp4" style="display: none;" id="video-final"></video>
+        <button id="continue-btn"></button>
       </div>
     </div>
 

@@ -38,6 +38,21 @@ position: relative;
   width: 366px;
   height: 50px;
   border: 3px solid white;
+  position: relative;
+}
+
+#continue-btn {
+  background-image: url("../images/CONTINUE.png");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: 600px 209px;
+  background-position: center;
+  padding: 20px;
+  border-radius: 20px;
+  width: 600px;
+  height: 209px;
+  border: 3px solid white;
+  position: relative;
 }
 
 .container {
@@ -52,8 +67,8 @@ position: relative;
   background-image: url("../images/Fondo\ Star\ Wars.png");
   background-position: center;
   background-size: cover;
-  width: 500px;;
-  height: 750px;;
+  width: 800px;
+  height: 1120px;
   overflow: hidden;
   position: relative;
   user-select: none;
@@ -62,7 +77,7 @@ position: relative;
   margin-top: -75px;
 }
 
-#game-screen, #gameover-screen {
+#game-screen, #gameover-screen, #transition-screen {
   display: none;
 }
 
@@ -76,9 +91,9 @@ img {
 
 #cuadro-de-mandos {
 z-index: 2;
-top: -60px;
+top: -150px;
 position: relative;
-width: 600px;
+width: 900px;
 border-radius: 25%;
 }
 #vidas {
@@ -88,11 +103,11 @@ border-radius: 25%;
 #han-solo {
   z-index: 3;
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 25%;
-  top: -320px;
-  left: -190px;
+  top: -490px;
+  left: -290px;
 }
 #text-vidas {
   color: white;
@@ -101,8 +116,9 @@ border-radius: 25%;
   width: 50px;
   height: 40px;
   border-radius: 25%;
-  top: -480px;
-  left: -140px;
+  top: -685px;
+  left: -170px;
+  font-size: 50px;
 }
 
 #text-score {
@@ -112,8 +128,8 @@ border-radius: 25%;
   width: 50px;
   height: 40px;
   border-radius: 25%;
-  top: -625px;
-  left: 185px;
+  top: -825px;
+  left: 305px;
 }
 
 #btn-musica-fondo {
@@ -128,8 +144,8 @@ border-radius: 25%;
   height: 50px;
   border: 3px solid white;
   z-index: 3;
-  top: -573px;
-  left: 60px;
+  top: -790px;
+  left: 135px;
   position: relative;
 }
 #btn-musica-fondo.activo {
@@ -144,8 +160,8 @@ border-radius: 25%;
   height: 50px;
   border: 3px solid white;
   z-index: 3;
-  top: -573px;
-  left: 60px;
+  top: -790px;
+  left: 135px;
   position: relative;
 }
 
@@ -161,8 +177,8 @@ border-radius: 25%;
   height: 50px;
   border: 3px solid white;
   z-index: 3;
-  top: -573px;
-  left: -70px;
+  top: -790px;
+  left: -6px;
   position: relative;
 }
 #btn-efectos.activo {
@@ -177,8 +193,41 @@ border-radius: 25%;
   height: 50px;
   border: 3px solid white;
   z-index: 3;
-  top: -573px;
-  left: -70px;
+  top: -790px;
+  left: -6px;
+  position: relative;
+}
+
+#btn-pause {
+  background-image: url("../images/btn-play.png");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: 50px 50px;
+  background-position: center;
+  padding: 20px;
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  border: 3px solid white;
+  z-index: 3;
+  top: -790px;
+  left: -150px;
+  position: relative;
+}
+#btn-pause.activo {
+  background-image: url("../images/btn-pause.png");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: 50px 50px;
+  background-position: center;
+  padding: 20px;
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  border: 3px solid white;
+  z-index: 3;
+  top: -790px;
+  left: -150px;
   position: relative;
 }
 
@@ -215,3 +264,36 @@ border-radius: 25%;
   position: relative;
   z-index: 2;
 }
+
+#transition-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  width: 1280px;
+}
+
+#transition-text {
+  width: 600px;
+  height: 59px;
+}
+
+#boss-image {
+  width: 600px;
+  height: 419px;
+}
+
+#video-final {
+  border: 3px solid white;
+  background-image: url("../images/Fondo\ Star\ Wars.png");
+  object-fit: contain;
+  border: none;
+  outline: none;
+  width: 1125px;
+  height: 481px;
+  border-left: 10px solid white;
+  border-top: 10px solid white;
+  border-bottom: 10px solid white;
+  outline: none;
+}
+

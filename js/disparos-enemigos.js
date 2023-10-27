@@ -1,5 +1,5 @@
 class DisparosEnemigos {
-  constructor(xPosition) {
+  constructor(xPosition, yPosition) {
     // Nodo
     this.node = document.createElement("img");
     this.node.src = "./images/disparo-rojo.png";
@@ -9,7 +9,7 @@ class DisparosEnemigos {
     this.h = 10;
     this.bR = 15;
     this.x = xPosition + 33;
-    this.y = 80;
+    this.y = yPosition + 80;
     // Propiedades del disparo
     this.dmg = 1;
     // Actualizar en el DOM
