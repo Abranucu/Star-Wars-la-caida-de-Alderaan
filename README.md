@@ -57,7 +57,7 @@ Tu misión es defenderte de las fuerzas enemigas imperiales mientras te embarcas
 ### Sketch
 
 [Proyecto base](./images/Proyecto%20base.jpg)<br>
-[Proyecto completo](./images/Proyecto%20completo.jpg.jpg)
+[Proyecto completo](./images/Proyecto%20completo.jpg)
 
 ### Slides
 
