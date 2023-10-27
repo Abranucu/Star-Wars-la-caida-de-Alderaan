@@ -56,7 +56,7 @@ Your mission is to defend against Imperial enemy forces as you embark on a quest
 
 ### Sketch
 [Base project](./images/Proyecto%20base.jpg)<br>
-[Complete project](./images/Proyecto%20completo.jpg.jpg)
+[Complete project](./images/Proyecto%20completo.jpg)
 
 ### Slides
 [Link](./presentacion/presentacion-star-wars-la-caida-de-alderaan-en.pdf)
