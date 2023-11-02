@@ -55,11 +55,11 @@ Your mission is to defend against Imperial enemy forces as you embark on a quest
 - Game Over Screen
 
 ### Sketch
-[Base project](./images/Proyecto%20base.jpg)<br>
-[Complete project](./images/Proyecto%20completo.jpg)
+[Base project](./presentacion/Proyecto%20base.jpg)<br>
+[Complete project](./presentacion/Proyecto%20completo.jpg)
 
 ### Slides
-[Link](./presentacion/presentacion-star-wars-la-caida-de-alderaan-en.pdf)
+[Presentation](./presentacion/presentacion-star-wars-la-caida-de-alderaan-en.pdf)
 
 ## Deploy
-[Link](www.your-deploy-url-here.com)
+[Game](www.your-deploy-url-here.com)

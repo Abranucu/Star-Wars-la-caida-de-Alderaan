@@ -1,16 +1,16 @@
 # NAME OF YOUR PROYECT
 
-## [Play the Game!](www.your-deploy-url-here.com)
+## [Prueba el Juego!](www.your-deploy-url-here.com)
 
 ![Game Logo](./images/Star%20Wars%20la%20caida%20de%20Alderaan.png)
 
-# Description
+# Descripcion
 
 "Star Wars: La Caída de Alderaan" es un emocionante juego de estilo arcade inspirado en el universo de Star Wars. Sumérgete en la galaxia y enfréntate a oleadas de enemigos en una aventura espacial al estilo de clásicos como Space Invaders y Galaga. El juego te desafía a través de tres niveles intensos, cada uno culminando en un enfrentamiento épico contra un jefe icónico del universo Star Wars.
 
 Tu misión es defenderte de las fuerzas enemigas imperiales mientras te embarcas en una misión para salvar el planeta Alderaan. Una vez que hayas superado a los tres jefes, la verdadera prueba comienza, ya que te enfrentarás a oleadas incesantes de enemigos comunes mientras luchas por sobrevivir. ¡Demuestra tu habilidad como piloto y observa cómo la galaxia Star Wars cobra vida en "Star Wars: La Caída de Alderaan"! ¿Tienes lo que se necesita para proteger Alderaan y vencer a las fuerzas imperiales? Que la Fuerza te acompañe en esta emocionante batalla galáctica.
 
-# Main Functionalities
+# Funcionalidades principales
 
 - Movimiento libre del personaje en todas las direcciones utilizando las teclas WASD.
 - Habilidad del personaje para efectuar disparos al presionar la tecla Space.
@@ -19,7 +19,7 @@ Tu misión es defenderte de las fuerzas enemigas imperiales mientras te embarcas
 - Aumento progresivo de la velocidad de movimiento de los enemigos a medida que avanza el juego.
 - Aumento gradual de la velocidad de disparo de los enemigos a medida que avanza el juego.
 
-# Backlog Functionalities
+# Funcionalidades a implementar
 
 - Cambiar el patrón de movimiento del enemigo 3 y jefe 3 a una trayectoria en espiral ascendente y descendente.
 - Modificar el comportamiento de los disparos de los enemigos: el enemigo 2 ahora realizará disparos dirigidos al jugador, mientras que el enemigo 3 no disparará.
@@ -33,7 +33,7 @@ Tu misión es defenderte de las fuerzas enemigas imperiales mientras te embarcas
     - Un piloto rebelde y el Ala-X.
     - Boba Fett y su Esclavo I.
 
-# Technologies used
+# Tecnologias usadas
 
 - HTML
 - CSS
@@ -44,25 +44,25 @@ Tu misión es defenderte de las fuerzas enemigas imperiales mientras te embarcas
 - Local Storage
 - JS Video(), JS Audio() and JS Image()
 
-# States
+# Estados
 
-- Start Screen
-- Select Screen
-- Game Screen
-- Transition Screen
-- Game Over Screen
+- Pantalla Start
+- Pantalla Select
+- Pantalla Juego
+- Pantalla Transicion
+- Pantalla GameOver
 
-# Extra Links
+# Links
 
 ### Sketch
 
-[Proyecto base](./images/Proyecto%20base.jpg)<br>
-[Proyecto completo](./images/Proyecto%20completo.jpg)
+[Proyecto base](./presentacion//Proyecto%20base.jpg)<br>
+[Proyecto completo](./presentacion//Proyecto%20completo.jpg)
 
 ### Slides
 
-[Link](./presentacion/presentacion-star-wars-la-caida-de-alderaan-es.pdf)
+[Presentacion](./presentacion/presentacion-star-wars-la-caida-de-alderaan-es.pdf)
 
 ## Deploy
 
-[Link](www.your-deploy-url-here.com)
+[Juego](www.your-deploy-url-here.com)

@@ -39,7 +39,7 @@
 
           // Boss 1 => nave de batalla de la federacion de comercio, se mueve de derecha a izquierda, lanza bombas que pueden interceptar los disparos del jugador, 1000 HP, al destruirla da 2000 puntos ✓X✓
 
-          // Boss 2 => destructor estelar imperial, movimiento en zigzag, dispara lasers dirigidos y pueden interceptar los disparos del jugador, 750 HP, al destruirla da 2500 puntos ✓X✓
+          // Boss 2 => destructor estelar imperial, movimiento en zigzag, dispara lasers dirigidos y pueden interceptar los disparos del jugador, 500 HP, al destruirla da 2500 puntos ✓X✓
 
           // Boss 3 => estrella de la muerte, movimiento descendente ascendente en espiral, lanza bombas que pueden interceptar disparos del jugador y lasers dirigidos que pueden interceptar disparos del jugador, tiene vida y escudo,             1000 HP 500 ARMOR, al destruirla da 3000 puntos XX✓
 

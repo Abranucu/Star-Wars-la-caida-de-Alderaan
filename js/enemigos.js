@@ -13,7 +13,7 @@ class Enemigos {
       this.x = Math.floor(Math.random() * (720 - 80 + 1)) + 80;
       this.y = 20;
       // Propiedades
-      this.hp = 1;
+      this.hp = 300;
       this.armor = 0;
       this.dmg = 1;
       this.score = 600;
@@ -34,7 +34,7 @@ class Enemigos {
       this.x = Math.floor(Math.random() * (500 - 300 + 1)) + 300;;
       this.y = 20;
       // Propiedades
-      this.hp = 1;
+      this.hp = 1000;
       this.armor = 0;
       this.dmg = 1;
       this.score = 2000;
@@ -55,7 +55,7 @@ class Enemigos {
       this.x = Math.floor(Math.random() * (510 - 290 + 1)) + 290;;
       this.y = 20;
       // Propiedades
-      this.hp = 1;
+      this.hp = 500;
       this.armor = 0;
       this.dmg = 1;
       this.score = 2500;
@@ -77,8 +77,8 @@ class Enemigos {
       this.x = Math.floor(Math.random() * (500 - 300 + 1)) + 300;;
       this.y = 20;
       // Propiedades
-      this.hp = 1;
-      this.armor = 1;
+      this.hp = 1000;
+      this.armor = 500;
       this.dmg = 1;
       this.score = 3000;
       // Actualizar en el DOM
@@ -102,7 +102,7 @@ class Enemigos {
       this.x = Math.floor(Math.random() * (720 - 80 + 1)) + 80;
       this.y = 20;
       // Propiedades
-      this.hp = 1;
+      this.hp = 150;
       this.armor = 0;
       this.dmg = 1;
       this.score = 900;
@@ -126,8 +126,8 @@ class Enemigos {
       this.x = Math.floor(Math.random() * (720 - 80 + 1)) + 80;
       this.y = 20;
       // Propiedades
-      this.hp = 1;
-      this.armor = 1;
+      this.hp = 300;
+      this.armor = 150;
       this.dmg = 1;
       this.score = 1200;
       // Actualizar en el DOM
