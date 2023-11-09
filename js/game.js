@@ -87,6 +87,7 @@ class Game {
   // Transition screen
   transitionScreen = () => {
     if (this.enemigos.hp <= 0 && countLvl <= 5) {
+      this.timer = 0;
       this.score += this.enemigos.score;
       gameScreenNode.style.display = "none";
       transitionScreenNode.style.display = "flex";
